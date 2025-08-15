@@ -11,10 +11,8 @@ function log() {
     echo "$(date -u +"%Y-%m-%dT%H:%M:%SZ") [controller] [${level}] ${msg}"
 }
 
-if ((TOR_INSTANCES < 1 || TOR_INSTANCES > 40)); then
-    log "fatal" "Environment variable TOR_INSTANCES has to be within the range of 1...40"
-    exit 1
-fi
+
+
 
 if ((TOR_REBUILD_INTERVAL < 600)); then
     log "fatal" "Environment variable TOR_REBUILD_INTERVAL has to be bigger than 600 seconds"
